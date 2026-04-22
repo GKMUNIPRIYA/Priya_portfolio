@@ -191,7 +191,7 @@ function App() {
                 <div className="contact-icon">📧</div>
                 <div className="contact-text">
                   <h4>Email</h4>
-                  <p>gmunipriya@gmail.com</p>
+                  <p><a href="mailto:gmunipriya@gmail.com" style={{ color: 'inherit', textDecoration: 'none' }}>gmunipriya@gmail.com</a></p>
                 </div>
               </div>
 
@@ -199,7 +199,7 @@ function App() {
                 <div className="contact-icon">📱</div>
                 <div className="contact-text">
                   <h4>Phone</h4>
-                  <p>+91 9342911971</p>
+                  <p><a href="tel:+919342911971" style={{ color: 'inherit', textDecoration: 'none' }}>+91 9342911971</a></p>
                 </div>
               </div>
 
