@@ -61,6 +61,8 @@ function App() {
 
   return (
     <div className="portfolio">
+      <div className="bg-orb orb-1"></div>
+      <div className="bg-orb orb-2"></div>
       <nav>
         <div className="container nav-content">
           <a href="#" className="logo">MUNIPRIYA<span className="gradient-text">.G</span></a>
@@ -213,7 +215,10 @@ function App() {
               <a href="https://www.linkedin.com/in/g-munipriya-279744316/" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ textAlign: 'center' }}>
                 LinkedIn Profile
               </a>
-              <a href="mailto:gmunipriya@gmail.com" className="btn" style={{ border: '1px solid var(--border)', textAlign: 'center' }}>
+              <a href="https://github.com/GKMUNIPRIYA" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ textAlign: 'center' }}>
+                GitHub Profile
+              </a>
+              <a href="mailto:gmunipriya@gmail.com" className="btn btn-outline" style={{ textAlign: 'center' }}>
                 Send Message
               </a>
             </div>

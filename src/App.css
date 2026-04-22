@@ -24,6 +24,34 @@ body {
   color: var(--text);
   line-height: 1.6;
   overflow-x: hidden;
+  position: relative;
+}
+
+/* Background Orbs */
+.bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: -2;
+  opacity: 0.5;
+  animation: floatOrb 10s infinite alternate ease-in-out;
+}
+
+.orb-1 {
+  width: 300px;
+  height: 300px;
+  background: var(--primary);
+  top: 10%;
+  left: -5%;
+}
+
+.orb-2 {
+  width: 400px;
+  height: 400px;
+  background: var(--accent);
+  bottom: 20%;
+  right: -10%;
+  animation-delay: -5s;
 }
 
 /* Typography */
@@ -215,10 +243,12 @@ nav {
   border: 1px solid var(--border);
   transform: rotate(3deg);
   transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation: floatImage 6s ease-in-out infinite;
 }
 
 .profile-img:hover {
   transform: rotate(0deg) scale(1.02);
+  animation-play-state: paused;
 }
 
 .hero-image-container::before {
@@ -256,6 +286,37 @@ nav {
   box-shadow: 0 10px 20px -10px var(--primary);
 }
 
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-outline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.btn-outline:hover {
+  border-color: var(--text-muted);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.3);
+}
+
+.btn-outline:hover::before {
+  left: 0;
+}
+
 /* Skills Section */
 .section-title {
   font-size: 2.5rem;
@@ -274,12 +335,30 @@ nav {
   padding: 2rem;
   border-radius: 1.5rem;
   border: 1px solid var(--border);
-  transition: transform 0.3s, border-color 0.3s;
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+  transition: left 0.5s;
 }
 
 .skill-card:hover {
   transform: translateY(-5px);
   border-color: var(--primary);
+  box-shadow: 0 10px 30px -10px rgba(37, 99, 235, 0.3);
+}
+
+.skill-card:hover::before {
+  left: 100%;
 }
 
 .skill-card h3 {
@@ -315,11 +394,13 @@ nav {
   overflow: hidden;
   border: 1px solid var(--border);
   transition: all 0.3s;
+  position: relative;
 }
 
 .project-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 40px -20px rgba(0,0,0,0.5);
+  box-shadow: 0 20px 40px -20px rgba(6, 182, 212, 0.4);
+  border-color: var(--accent);
 }
 
 .project-info {
@@ -375,25 +456,43 @@ nav {
 .education-timeline {
   max-width: 800px;
   margin: 0 auto;
+  position: relative;
+}
+
+.education-timeline::before {
+  content: '';
+  position: absolute;
+  left: 11px;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--primary), var(--accent), transparent);
 }
 
 .edu-item {
   position: relative;
   padding-left: 3rem;
   margin-bottom: 3rem;
-  border-left: 2px solid var(--border);
 }
 
 .edu-item::before {
   content: '';
   position: absolute;
-  left: -9px;
-  top: 0;
-  width: 16px;
-  height: 16px;
+  left: 0;
+  top: 0.5rem;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
+  background: var(--background);
+  border: 4px solid var(--primary);
+  box-shadow: 0 0 10px var(--primary);
+  transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+}
+
+.edu-item:hover::before {
+  transform: scale(1.2);
   background: var(--primary);
-  border: 4px solid var(--background);
+  box-shadow: 0 0 20px var(--primary);
 }
 
 .edu-year {
@@ -696,6 +795,18 @@ footer {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@keyframes floatOrb {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, -50px) scale(1.1); }
+  100% { transform: translate(-20px, 20px) scale(0.9); }
+}
+
+@keyframes floatImage {
+  0% { transform: translateY(0) rotate(3deg); }
+  50% { transform: translateY(-15px) rotate(3deg); }
+  100% { transform: translateY(0) rotate(3deg); }
 }
 
 .hero-content, .hero-image-container, .skill-card, .project-card, .edu-item {
