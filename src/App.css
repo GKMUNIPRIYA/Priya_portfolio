@@ -563,6 +563,17 @@ nav {
   font-weight: 500;
 }
 
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.contact-links .btn {
+  text-align: center;
+}
+
 footer {
   text-align: center;
   padding: 3rem 0;
@@ -721,11 +732,6 @@ footer {
 
   .section-title {
     font-size: 2rem;
-  }
-
-  .contact-links {
-    flex-direction: row !important;
-    flex-wrap: wrap;
   }
 }
 

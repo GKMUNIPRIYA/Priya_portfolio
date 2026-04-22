@@ -211,14 +211,14 @@ function App() {
                 </div>
               </div>
             </div>
-            <div className="contact-links" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '1rem' }}>
-              <a href="https://www.linkedin.com/in/g-munipriya-279744316/" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ textAlign: 'center' }}>
+            <div className="contact-links">
+              <a href="https://www.linkedin.com/in/g-munipriya-279744316/" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
                 LinkedIn Profile
               </a>
-              <a href="https://github.com/GKMUNIPRIYA" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ textAlign: 'center' }}>
+              <a href="https://github.com/GKMUNIPRIYA" target="_blank" rel="noopener noreferrer" className="btn btn-outline">
                 GitHub Profile
               </a>
-              <a href="mailto:gmunipriya@gmail.com" className="btn btn-outline" style={{ textAlign: 'center' }}>
+              <a href="mailto:gmunipriya@gmail.com" className="btn btn-outline">
                 Send Message
               </a>
             </div>
