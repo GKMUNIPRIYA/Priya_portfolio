@@ -102,10 +102,10 @@ function App() {
             </div>
           </div>
           <div className="hero-image-container">
-            <img 
-              src={profileImg} 
-              alt="Munipriya G" 
-              className="profile-img" 
+            <img
+              src={profileImg}
+              alt="Munipriya G"
+              className="profile-img"
             />
           </div>
         </div>
@@ -136,7 +136,6 @@ function App() {
           </div>
         </div>
       </section>
-
       <section id="projects" className="projects">
         <div className="container">
           <h2 className="section-title">Featured <span className="gradient-text">Work</span></h2>
@@ -186,7 +185,7 @@ function App() {
               <p style={{ color: 'var(--text-muted)', marginBottom: '2rem' }}>
                 I am currently looking for new opportunities. My inbox is always open.
               </p>
-              
+
               <div className="contact-method">
                 <div className="contact-icon">📧</div>
                 <div className="contact-text">
