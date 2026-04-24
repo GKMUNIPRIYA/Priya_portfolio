@@ -23,7 +23,8 @@ function App() {
     {
       title: 'E-commerce Herbal Products Website',
       description: 'Designed and developed a shopping platform with a focus on user-friendly navigation and clean interface.',
-      tools: ['Django', 'MySQL']
+      tools: ['Django', 'MySQL'],
+      link: 'https://simple-multivendor-site.onrender.com/'
     },
     {
       title: 'IoT Fish Feeding and Water Level Indicator',
